@@ -1,0 +1,95 @@
+//Colors
+$primary-color: hsl(300, 43%, 22%);
+$secondary-color: hsl(333, 80%, 67%);
+
+$dark-color: hsl(303, 10%, 53%);
+$gray-color: hsl(300, 24%, 96%);
+$white-color: hsl(0, 0%, 100%);
+
+// Fonts
+$f-size: 15px;
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;
+$f-family: "Spartan", sans-serif;
+
+$max-width: 40rem;
+
+//Reset
+//this css reset is taken from Elad Shechter's blog, https://elad.medium.com/the-new-css-reset-53f41f13282e
+//you can delete the elements that are not in this design , such as text area,table and so on.
+
+/*** The new CSS Reset - version 1.4.2 (last updated 30.11.2021) ***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+//utility classes
+.flex {
+  display: flex;
+}
+
+//GLOBAL STYLES
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $f-family;
+  background-image: url("../images/bg-pattern-top-mobile.svg"),
+    url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+
+  @media screen and (min-width: 768px) {
+    background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+  }
+}

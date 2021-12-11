@@ -1,0 +1,332 @@
+/*** The new CSS Reset - version 1.4.2 (last updated 30.11.2021) ***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  main {
+    min-height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+main .container {
+  max-width: 1440px;
+  padding: 8rem 3rem;
+  margin: 0 auto;
+}
+
+.intro__headings {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  text-align: center;
+}
+
+.intro__headings h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 12ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: #502050;
+  line-height: 1;
+}
+
+.intro__headings p {
+  color: #937b92;
+  max-width: 60ch;
+  margin: 2rem auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 48em) {
+  .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .intro h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin: 0;
+  }
+  .intro p {
+    max-width: 50ch;
+    text-align: left;
+    margin: 1rem 0 0;
+  }
+}
+
+.intro__ratings {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 60%;
+          flex: 1 1 60%;
+}
+
+.intro__ratings .rating {
+  background-color: #f7f2f7;
+  max-width: 40rem;
+  color: #502050;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro__ratings .rating__stars {
+  margin-bottom: 1rem;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.intro__ratings .rating__stars img {
+  width: 1.2rem;
+}
+
+.intro__ratings .rating__stars img:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.intro__ratings .rating:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 48em) {
+  .intro__ratings .rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .intro__ratings .rating:first-child {
+    margin-left: 0;
+  }
+  .intro__ratings .rating:last-child {
+    margin-right: 0;
+  }
+  .intro__ratings .rating__stars {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+}
+
+.testimonials {
+  margin-top: 4rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials__card {
+  background-color: #502050;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.testimonials__card:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.testimonials__card img {
+  border-radius: 50%;
+  width: 4rem;
+  margin-right: 2rem;
+}
+
+.testimonials__card .details {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+.testimonials__card .details span {
+  display: block;
+}
+
+.testimonials__card .details .buyer__status {
+  margin-top: 3px;
+}
+
+.testimonials__card .details .buyer__status--verified {
+  color: #ee68a4;
+}
+
+.testimonials__card p {
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 48em) {
+  .testimonials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+  }
+  .testimonials__card:not(:first-child) {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+  .testimonials__card:nth-child(2) {
+    -webkit-transform: translateY(1.5rem);
+            transform: translateY(1.5rem);
+  }
+  .testimonials__card:nth-child(3) {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.2vw, 4rem);
+  margin-right: 1rem;
+}
+
+footer img {
+  width: 7rem;
+  border-radius: 50%;
+  -webkit-animation: ripple 1s infinite;
+          animation: ripple 1s infinite;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+}
+
+footer img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px rgba(255, 122, 0, 0);
+            box-shadow: 0 0 0 20px rgba(255, 122, 0, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px rgba(255, 122, 0, 0);
+            box-shadow: 0 0 0 20px rgba(255, 122, 0, 0);
+  }
+}
+/*# sourceMappingURL=main.css.map */
